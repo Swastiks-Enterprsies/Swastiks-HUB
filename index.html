@@ -404,7 +404,7 @@
 </div>
 
 <script>
-  (function checkForUpdate() {
+  function checkForUpdate() {
     fetch('version.json?_=' + Date.now(), { cache: 'no-store' })
       .then(function (res) { return res.json(); })
       .then(function (data) {
@@ -418,7 +418,9 @@
         }
       })
       .catch(function () {});
-  })();
+  }
+  checkForUpdate();
+  setInterval(checkForUpdate, 24 * 60 * 60 * 1000);
 
   document.getElementById('refresh-btn').addEventListener('click', () => {
     var btn = document.getElementById('refresh-btn');

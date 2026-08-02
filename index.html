@@ -366,6 +366,23 @@
 </div>
 
 <script>
+<script>
+  (function checkForUpdate() {
+    fetch('version.json?_=' + Date.now(), { cache: 'no-store' })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var current = data.v;
+        var stored = localStorage.getItem('app_version');
+        if (stored && stored !== current) {
+          localStorage.setItem('app_version', current);
+          window.location.reload();
+        } else if (!stored) {
+          localStorage.setItem('app_version', current);
+        }
+      })
+      .catch(function () {});
+  })();
+
   function updateClock() {
     const now = new Date();
     const dayStr = now.toLocaleDateString(undefined, { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });

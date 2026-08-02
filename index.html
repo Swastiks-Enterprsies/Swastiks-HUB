@@ -111,7 +111,8 @@
     width: 100%;
     text-align: left;
     font-size: 14px;
-    color: #444;
+    font-weight: 600;
+    color: #333;
     cursor: pointer;
     font-family: inherit;
   }
@@ -301,6 +302,13 @@
           <span class="dot"></span>Dealer visits
         </button>
       </div>
+
+      <button class="menu-item" data-screen="pricelist" data-title="Price list">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41L11 3.83V3H10.17L2 11.17V12h.83L12.41 20.59a2 2 0 002.83 0l5.35-5.35a2 2 0 000-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/>
+        </svg>
+        Price list
+      </button>
     </div>
   </div>
 
@@ -338,6 +346,18 @@
         src="https://script.google.com/macros/s/AKfycbyjNeQoTgdSV77Bv-CCWsnekRNSDO6j6bg3FXUD-cKBj7DYh0DO0Qspub7_AZFTPYzJ/exec"
         onload="document.getElementById('loading-dealer').style.display='none'"
         title="Dealer visit report"
+      ></iframe>
+    </div>
+
+    <div class="screen" id="screen-pricelist">
+      <div class="loading" id="loading-pricelist">
+        <div class="spinner"></div>
+        <span>Loading price list…</span>
+      </div>
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbwpdOUnv-gxv_qFyuo4EZ-C9JzcJlE9lh9ZYzYr_d_PU1A5pEQpS2TxC2DpUdzjXVgE/exec"
+        onload="document.getElementById('loading-pricelist').style.display='none'"
+        title="Price list"
       ></iframe>
     </div>
 

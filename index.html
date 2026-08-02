@@ -50,24 +50,54 @@
   }
   header .menu-btn:active { background: rgba(255,255,255,0.15); }
   header .menu-btn svg { width: 22px; height: 22px; }
-  header .title { font-size: 16px; font-weight: 600; letter-spacing: 0.3px; }
-  header .clock {
-    margin-left: auto;
-    text-align: right;
-    line-height: 1.3;
+  header .refresh-btn {
+    border: none;
+    background: none;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
     flex: none;
-    max-width: 92px;
+  }
+  header .refresh-btn:active { background: rgba(255,255,255,0.15); }
+  header .refresh-btn svg { width: 20px; height: 20px; }
+  header .header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+  }
+  header .title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  header .clock {
+    text-align: right;
+    line-height: 1.35;
+    flex: none;
   }
   header .clock .clock-day {
-    font-size: 9.5px;
+    font-size: 12px;
     font-weight: 600;
-    opacity: 0.9;
+    opacity: 0.95;
     display: block;
+    white-space: nowrap;
   }
   header .clock .clock-time {
-    font-size: 10.5px;
-    opacity: 0.85;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.9;
     display: block;
+    white-space: nowrap;
   }
 
   .menu-overlay {
@@ -253,10 +283,18 @@
       </svg>
     </button>
     <span class="title">SWASTIKS ENTERPRISES</span>
-    <span class="clock">
-      <span class="clock-day" id="clock-day">--</span>
-      <span class="clock-time" id="clock-time">--:--</span>
-    </span>
+    <div class="header-right">
+      <button class="refresh-btn" id="refresh-btn" aria-label="Refresh app">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
+          <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+        </svg>
+      </button>
+      <span class="clock">
+        <span class="clock-day" id="clock-day">--</span>
+        <span class="clock-time" id="clock-time">--:--</span>
+      </span>
+    </div>
   </header>
 
   <div class="menu-overlay" id="menu-overlay">
@@ -382,9 +420,16 @@
       .catch(function () {});
   })();
 
+  document.getElementById('refresh-btn').addEventListener('click', () => {
+    var btn = document.getElementById('refresh-btn');
+    btn.style.opacity = '0.4';
+    var url = window.location.pathname + '?_fresh=' + Date.now();
+    window.location.href = url;
+  });
+
   function updateClock() {
     const now = new Date();
-    const dayStr = now.toLocaleDateString(undefined, { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+    const dayStr = now.toLocaleDateString(undefined, { weekday: 'long', day: '2-digit', month: 'long' });
     const timeStr = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     document.getElementById('clock-day').textContent = dayStr;
     document.getElementById('clock-time').textContent = timeStr;

@@ -24,6 +24,7 @@
     flex-direction: column;
     height: 100vh;
     height: 100dvh;
+    height: calc(var(--app-vh, 1vh) * 100);
   }
 
   header {
@@ -425,6 +426,17 @@
 </div>
 
 <script>
+  function setAppHeight() {
+    var vh = (window.visualViewport ? window.visualViewport.height : window.innerHeight) * 0.01;
+    document.documentElement.style.setProperty('--app-vh', vh + 'px');
+  }
+  setAppHeight();
+  window.addEventListener('resize', setAppHeight);
+  window.addEventListener('orientationchange', setAppHeight);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', setAppHeight);
+  }
+
   function checkForUpdate() {
     fetch('version.json?_=' + Date.now(), { cache: 'no-store' })
       .then(function (res) { return res.json(); })

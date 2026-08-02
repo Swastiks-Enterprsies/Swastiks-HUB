@@ -366,7 +366,6 @@
 </div>
 
 <script>
-  (function checkForUpdate() {
     fetch('version.json?_=' + Date.now(), { cache: 'no-store' })
       .then(function (res) { return res.json(); })
       .then(function (data) {

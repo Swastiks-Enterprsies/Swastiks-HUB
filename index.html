@@ -437,11 +437,9 @@
     document.documentElement.style.setProperty('--app-vh', vh + 'px');
   }
   setAppHeight();
-  window.addEventListener('resize', setAppHeight);
-  window.addEventListener('orientationchange', setAppHeight);
-  if (window.visualViewport) {
-    window.visualViewport.addEventListener('resize', setAppHeight);
-  }
+  window.addEventListener('orientationchange', function () {
+    setTimeout(setAppHeight, 300);
+  });
 
   function checkForUpdate() {
     fetch('version.json?_=' + Date.now(), { cache: 'no-store' })

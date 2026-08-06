@@ -364,6 +364,25 @@
         </button>
       </div>
 
+      <button class="menu-parent" data-parent="report">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/>
+          <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/>
+        </svg>
+        Report
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+      <div class="submenu" data-submenu="report">
+        <button class="submenu-item" data-screen="salesreport" data-title="Report - Sales Report">
+          <span class="dot"></span>Sales Report
+        </button>
+        <button class="submenu-item" data-screen="accounts" data-title="Report - Accounts">
+          <span class="dot"></span>Accounts
+        </button>
+      </div>
+
       <button class="menu-item" data-screen="pricelist" data-title="Price list">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20.59 13.41L11 3.83V3H10.17L2 11.17V12h.83L12.41 20.59a2 2 0 002.83 0l5.35-5.35a2 2 0 000-2.83z"/><circle cx="7.5" cy="7.5" r="1.5"/>
@@ -424,6 +443,30 @@
         src="https://script.google.com/macros/s/AKfycbwpdOUnv-gxv_qFyuo4EZ-C9JzcJlE9lh9ZYzYr_d_PU1A5pEQpS2TxC2DpUdzjXVgE/exec"
         onload="document.getElementById('loading-pricelist').style.display='none'"
         title="Price list"
+      ></iframe>
+    </div>
+
+    <div class="screen" id="screen-salesreport">
+      <div class="loading" id="loading-salesreport">
+        <div class="spinner"></div>
+        <span>Loading sales report…</span>
+      </div>
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbwsRfRzvNGey11Fo2xCeARenganbmD-1qF0vSaGxro-7wCXDY8n0VaHUQQlx2iZJpcK/exec"
+        onload="document.getElementById('loading-salesreport').style.display='none'"
+        title="Sales report"
+      ></iframe>
+    </div>
+
+    <div class="screen" id="screen-accounts">
+      <div class="loading" id="loading-accounts">
+        <div class="spinner"></div>
+        <span>Loading accounts…</span>
+      </div>
+      <iframe
+        src="https://script.google.com/macros/s/AKfycbzntC-Ia7OjTfmhTliWJaWDPwlTjfvUtTA2hI4OFcM57b9tlWjHIlu9bpdqIVXMHNAK/exec"
+        onload="document.getElementById('loading-accounts').style.display='none'"
+        title="Accounts"
       ></iframe>
     </div>
 

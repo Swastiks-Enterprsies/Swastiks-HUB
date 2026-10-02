@@ -389,6 +389,13 @@
         </svg>
         Price list
       </button>
+
+      <button class="menu-item" data-screen="catalog" data-title="Catalog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+        </svg>
+        Catalog
+      </button>
     </div>
   </div>
 
@@ -472,6 +479,19 @@
         src="https://script.google.com/macros/s/AKfycbzntC-Ia7OjTfmhTliWJaWDPwlTjfvUtTA2hI4OFcM57b9tlWjHIlu9bpdqIVXMHNAK/exec"
         onload="document.getElementById('loading-accounts').style.display='none'"
         title="Accounts"
+      ></iframe>
+    </div>
+
+    <div class="screen" id="screen-catalog">
+      <div class="loading" id="loading-catalog">
+        <div class="spinner"></div>
+        <span>Loading catalog…</span>
+      </div>
+      <iframe
+        allow="geolocation; camera; microphone; web-share"
+        src="https://script.google.com/macros/s/AKfycbx3NzgXul0urnAEMVbu3620N-xFCzpjk_EDgaIO4_kqCmDU03AUQiJpVui_dbTYjtX-Gg/exec"
+        onload="document.getElementById('loading-catalog').style.display='none'"
+        title="Catalog"
       ></iframe>
     </div>
 

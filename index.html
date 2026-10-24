@@ -17,6 +17,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     background: #f4f4f2;
     overflow: hidden;
+    overscroll-behavior-y: none;
   }
 
   #app {
@@ -417,82 +418,46 @@
       </div>
     </div>
 
-    <div class="screen" id="screen-stock">
+    <div class="screen" id="screen-stock" data-src="https://script.google.com/macros/s/AKfycbxR7oOxdkuvYaPdBFmp6xdmJMytOV3HPPLAIng-a1VdpkA942QfZK00kpUPqxjkYLZF5g/exec" data-frame-title="Stock report">
       <div class="loading" id="loading-stock">
         <div class="spinner"></div>
         <span>Loading stock report…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbxR7oOxdkuvYaPdBFmp6xdmJMytOV3HPPLAIng-a1VdpkA942QfZK00kpUPqxjkYLZF5g/exec"
-        onload="document.getElementById('loading-stock').style.display='none'"
-        title="Stock report"
-      ></iframe>
     </div>
 
-    <div class="screen" id="screen-dealer">
+    <div class="screen" id="screen-dealer" data-src="https://script.google.com/macros/s/AKfycbyjNeQoTgdSV77Bv-CCWsnekRNSDO6j6bg3FXUD-cKBj7DYh0DO0Qspub7_AZFTPYzJ/exec" data-frame-title="Dealer visit report">
       <div class="loading" id="loading-dealer">
         <div class="spinner"></div>
         <span>Loading dealer visit report…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbyjNeQoTgdSV77Bv-CCWsnekRNSDO6j6bg3FXUD-cKBj7DYh0DO0Qspub7_AZFTPYzJ/exec"
-        onload="document.getElementById('loading-dealer').style.display='none'"
-        title="Dealer visit report"
-      ></iframe>
     </div>
 
-    <div class="screen" id="screen-pricelist">
+    <div class="screen" id="screen-pricelist" data-src="https://script.google.com/macros/s/AKfycbwpdOUnv-gxv_qFyuo4EZ-C9JzcJlE9lh9ZYzYr_d_PU1A5pEQpS2TxC2DpUdzjXVgE/exec" data-frame-title="Price list">
       <div class="loading" id="loading-pricelist">
         <div class="spinner"></div>
         <span>Loading price list…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbwpdOUnv-gxv_qFyuo4EZ-C9JzcJlE9lh9ZYzYr_d_PU1A5pEQpS2TxC2DpUdzjXVgE/exec"
-        onload="document.getElementById('loading-pricelist').style.display='none'"
-        title="Price list"
-      ></iframe>
     </div>
 
-    <div class="screen" id="screen-salesreport">
+    <div class="screen" id="screen-salesreport" data-src="https://script.google.com/macros/s/AKfycbwsRfRzvNGey11Fo2xCeARenganbmD-1qF0vSaGxro-7wCXDY8n0VaHUQQlx2iZJpcK/exec" data-frame-title="Sales report">
       <div class="loading" id="loading-salesreport">
         <div class="spinner"></div>
         <span>Loading sales report…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbwsRfRzvNGey11Fo2xCeARenganbmD-1qF0vSaGxro-7wCXDY8n0VaHUQQlx2iZJpcK/exec"
-        onload="document.getElementById('loading-salesreport').style.display='none'"
-        title="Sales report"
-      ></iframe>
     </div>
 
-    <div class="screen" id="screen-accounts">
+    <div class="screen" id="screen-accounts" data-src="https://script.google.com/macros/s/AKfycbzntC-Ia7OjTfmhTliWJaWDPwlTjfvUtTA2hI4OFcM57b9tlWjHIlu9bpdqIVXMHNAK/exec" data-frame-title="Accounts">
       <div class="loading" id="loading-accounts">
         <div class="spinner"></div>
         <span>Loading accounts…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbzntC-Ia7OjTfmhTliWJaWDPwlTjfvUtTA2hI4OFcM57b9tlWjHIlu9bpdqIVXMHNAK/exec"
-        onload="document.getElementById('loading-accounts').style.display='none'"
-        title="Accounts"
-      ></iframe>
     </div>
 
-    <div class="screen" id="screen-catalog">
+    <div class="screen" id="screen-catalog" data-src="https://script.google.com/macros/s/AKfycbx3NzgXul0urnAEMVbu3620N-xFCzpjk_EDgaIO4_kqCmDU03AUQiJpVui_dbTYjtX-Gg/exec" data-frame-title="Catalog">
       <div class="loading" id="loading-catalog">
         <div class="spinner"></div>
         <span>Loading catalog…</span>
       </div>
-      <iframe
-        allow="geolocation; camera; microphone; web-share"
-        src="https://script.google.com/macros/s/AKfycbx3NzgXul0urnAEMVbu3620N-xFCzpjk_EDgaIO4_kqCmDU03AUQiJpVui_dbTYjtX-Gg/exec"
-        onload="document.getElementById('loading-catalog').style.display='none'"
-        title="Catalog"
-      ></iframe>
     </div>
 
   </div>
@@ -587,6 +552,23 @@
     if (matchingSub) matchingSub.classList.add('active');
 
     menuOverlay.classList.remove('open');
+
+    loadFrame(target);
+    try { localStorage.setItem('last_screen', target); } catch (e) {}
+  }
+
+  // Each report page loads only the first time you open it (saves memory and data on phones)
+  function loadFrame(target) {
+    var el = document.getElementById('screen-' + target);
+    var src = el && el.getAttribute('data-src');
+    if (!src || el.querySelector('iframe')) return;
+    var loading = el.querySelector('.loading');
+    var frame = document.createElement('iframe');
+    frame.setAttribute('allow', 'geolocation; camera; microphone; web-share');
+    frame.setAttribute('title', el.getAttribute('data-frame-title') || '');
+    frame.addEventListener('load', function () { if (loading) loading.style.display = 'none'; });
+    frame.src = src;
+    el.appendChild(frame);
   }
 
   topLevelItems.forEach(item => {
@@ -600,6 +582,13 @@
       goToScreen(item.getAttribute('data-screen'), item.getAttribute('data-title'));
     });
   });
+
+  // After any reload (phone freed memory, came back from another app, pull-down refresh),
+  // go back to the screen you were last on instead of Home.
+  try {
+    var last = localStorage.getItem('last_screen');
+    if (last && last !== 'home' && document.getElementById('screen-' + last)) goToScreen(last);
+  } catch (e) {}
 </script>
 </body>
 </html>
